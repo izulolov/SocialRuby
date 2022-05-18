@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   #Именнованный маршрут
   get 'signup'  => 'users#new'
   
+  resources :users
+
   #Неименнованный маршрут
   #get 'users#new'
 end
