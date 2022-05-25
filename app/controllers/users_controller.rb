@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
-    
   end
   
   def new
@@ -13,6 +12,11 @@ class UsersController < ApplicationController
     #@user = User.new(params[:user])    # Не окончательная реализация!
     @user = User.new(user_params)
     if @user.save
+      #Вход после регистрации, то есть если пользовател зарегался
+      #то сразу откроется его страница
+      log_in @user
+      
+      
       flash[:success] = "Welcome to the Sample App!"
       redirect_to @user
       # Обработать успешное сохранение.
