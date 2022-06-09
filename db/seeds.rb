@@ -12,21 +12,29 @@
 #require 'faker'
 
 
-=begin
+#=begin
   
-rescue => exception
+#rescue => exception
   
-end
-require './test.rb'
+#end
+#require './test.rb'
+
+User.create!(name:  "Ikbol Zulolov",
+  email: "ikbol-1996@mail.ru",
+  password:              "123456",
+  password_confirmation: "123456",
+  admin:     true,
+  activated: true,
+  activated_at: Time.zone.now)
 
 99.times do |n|
-    name  = Faker::Name.name
-    email = "example-#{n+1}@railstutorial.org"
-    password = "password"
-    User.create!(name:  name,
-      email: email,
-      password:              password,
-      password_confirmation: password)
+name  = Faker::Name.name
+email = "example-#{n+1}@railstutorial.org"
+password = "password"
+User.create!(name:  name,
+   email: email,
+   password:              password,
+   password_confirmation: password,
+   activated: true,
+   activated_at: Time.zone.now)
 end
-
-=end
